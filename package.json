@@ -1,0 +1,47 @@
+{
+  "name": "inferno-snowpack-ts-demo",
+  "version": "0.0.1-alpha",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean:prod": "rm -rf ./prod && rm -rf ./intermediate-prod",
+    "clean:dev": "rm -rf ./dist && rm -rf ./intermediate-dist",
+    "copy:static": "npx cpx-fixed \"src/*.{html,css}\" ./dist",
+    "copy:prod": "node utils/rename.js ./dist ./prod",
+    "build:js": "babel --extensions \".ts,.tsx,.js,.jsx\" src/ -d intermediate-dist",
+    "build:es": "babel --no-babelrc intermediate-dist/ -d dist --plugins=snowpack/assets/babel-plugin.js",
+    "build:js:watch": "babel --watch --extensions \".ts,.tsx,.js,.jsx\" src/ -d intermediate-dist",
+    "build:es:watch": "babel --no-babelrc --watch intermediate-dist/ -d dist --plugins=snowpack/assets/babel-plugin.js",
+    "build:prepare": "npm run build:js && npm run snowpack && npm run build:es && npm run copy:static",
+    "watch": "concurrently -k \"npm run build:js:watch\" \"npm run build:es:watch\" \"npm run server\"",
+    "snowpack": "snowpack --include \"intermediate-dist/**/*.js\" --dest dist/web_modules",
+    "server": "npx servor dist index.html 8000 --reload",
+    "start": "npm run clean:dev && npm run build:prepare && npm run watch",
+    "build:js:prod": "babel --extensions \".ts,.tsx,.js,.jsx\" src/ -d intermediate-dist",
+    "build:es:prod": "babel --no-babelrc intermediate-dist/ -d dist --plugins=snowpack/assets/babel-plugin.js --presets minify",
+    "snowpack:prod": "snowpack --optimize --no-source-map --include \"intermediate-dist/**/*.js\" --dest dist/web_modules",
+    "prod": "npm run clean:prod && npm run clean:dev && npm run build:js:prod && npm run build:es:prod && npm run snowpack:prod && npm run copy:prod"
+  },
+  "keywords": [
+    "inferno",
+    "typescript",
+    "snowpack",
+    "babel"
+  ],
+  "author": "L0y3r",
+  "license": "ISC",
+  "dependencies": {
+    "inferno": "7.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.8.3",
+    "@babel/core": "7.8.3",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/preset-typescript": "7.8.3",
+    "babel-plugin-inferno": "6.1.0",
+    "babel-preset-minify": "0.5.1",
+    "concurrently": "5.0.2",
+    "snowpack": "1.0.5",
+    "typescript": "3.7.5"
+  }
+}
