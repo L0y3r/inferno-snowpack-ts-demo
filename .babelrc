@@ -3,23 +3,29 @@
         "inferno-ts": {
             "plugins": [
                 ["babel-plugin-inferno", { "imports": true }],
-                ["@babel/plugin-proposal-class-properties"]
+                ["@babel/plugin-proposal-class-properties", { "loose": true }]
             ],
             "presets": ["@babel/preset-typescript"]
         },
         "snowpack": {
             "plugins": [
-                ["snowpack/assets/babel-plugin.js", {}]
+                ["snowpack/assets/babel-plugin.js", {
+                    "optionalExtensions": true,
+                    "addVersion": false
+                }]
             ]
         },
         "snowpack-prod": {
             "plugins": [
                 ["snowpack/assets/babel-plugin.js", {
-                    "removeConsole": true,
-                    "removeDebugger": true
+                    "optionalExtensions": true,
+                    "addVersion": false
                 }]
             ],
-            "presets": ["minify"]
+            "presets": ["minify", {
+                "removeConsole": true,
+                "removeDebugger": true
+            }]
         }
     }
 }

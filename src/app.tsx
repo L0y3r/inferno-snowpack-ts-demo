@@ -1,4 +1,5 @@
-import { Component, render, version } from 'inferno';
+import { Component, render, version, Fragment } from 'inferno';
+import { Incrementer } from './components/Incrementer';
 
 const container = document.getElementById('app');
 
@@ -12,9 +13,10 @@ class MyComponent extends Component<any, any> {
 	}
 
 	public render = () => (
-		<div>
+		<Fragment>
 			<h1>Welcome to Inferno {version} TSX {this.tsxVersion}</h1>
-		</div>
+			<Incrementer name="Crazy Button" />
+		</Fragment>
 	);
 }
 
