@@ -40,7 +40,7 @@
     "babel-plugin-inferno": "6.1.0",
     "babel-preset-minify": "0.5.1",
     "concurrently": "5.0.2",
-    "snowpack": "1.0.5",
+    "snowpack": "1.1.2",
     "typescript": "3.7.5"
   }
 }
