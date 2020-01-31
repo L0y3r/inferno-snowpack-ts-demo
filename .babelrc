@@ -22,10 +22,10 @@
                     "addVersion": false
                 }]
             ],
-            "presets": ["minify", {
+            "presets": [["minify", {
                 "removeConsole": true,
                 "removeDebugger": true
-            }]
+              }]]
         }
     }
 }
