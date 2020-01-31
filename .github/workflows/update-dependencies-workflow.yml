@@ -1,0 +1,22 @@
+name: Update dependencies
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - package.json
+      - package-lock.json
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: npm install
+    - run: npm run prod
