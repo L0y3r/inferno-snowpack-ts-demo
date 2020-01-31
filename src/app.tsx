@@ -14,7 +14,7 @@ class MyComponent extends Component<any, any> {
 
 	public render = () => (
 		<Fragment>
-			<h1>Welcome to Inferno {version} TSX {this.tsxVersion}</h1>
+			<h1>Welcome to Inferno {version} TSX {this.tsxVersion}!</h1>
 			<Incrementer name="Crazy Button" />
 		</Fragment>
 	);
