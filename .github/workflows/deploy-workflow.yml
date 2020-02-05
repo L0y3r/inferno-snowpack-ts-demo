@@ -26,9 +26,9 @@ jobs:
         touch docs/.nojekyll
     - name: Commit files
       run: |
-        git config --local user.email "marcoantonioloyom@hotmail.com"
-        git config --local user.name "Marco Antonio Loyo"
-        git add -vA docs/*
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A docs/*
         git add docs/.nojekyll
         git commit -m "chore: Deploy website"
     - name: Push changes
