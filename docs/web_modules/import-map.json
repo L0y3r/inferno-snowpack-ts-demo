@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "inferno": "./inferno.js"
+  }
+}

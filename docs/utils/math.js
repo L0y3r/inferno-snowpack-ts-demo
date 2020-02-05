@@ -1,0 +1,1 @@
+/* This is example of regular Typescript file used with JSX */export function addOne(a){return a+1}
