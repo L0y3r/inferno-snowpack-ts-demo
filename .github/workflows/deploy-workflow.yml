@@ -22,7 +22,7 @@ jobs:
     - name: Copy new files
       run: |
         mkdir docs
-        cp prod/. docs/
+        cp -r prod/. docs/
         touch docs/.nojekyll
     - name: Commit files
       run: |
