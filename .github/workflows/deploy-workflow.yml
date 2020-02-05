@@ -28,7 +28,8 @@ jobs:
       run: |
         git config --local user.email "marcoantonioloyom@hotmail.com"
         git config --local user.name "Marco Antonio Loyo"
-        git add -A docs/*
+        git add -vA docs/*
+        git add docs/.nojekyll
         git commit -m "chore: Deploy website"
     - name: Push changes
       uses: ad-m/github-push-action@master
