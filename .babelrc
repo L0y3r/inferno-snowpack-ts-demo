@@ -17,7 +17,8 @@
         },
         "snowpack-prod": {
             "plugins": [
-                ["snowpack/assets/babel-plugin.js", {
+                ["snowpack/assets/babel-plugin.js", {,
+                    "dir": "/inferno-snowpack-ts-demo/web_modules/"
                     "optionalExtensions": true,
                     "addVersion": false
                 }]
