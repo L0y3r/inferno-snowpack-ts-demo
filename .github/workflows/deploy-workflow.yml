@@ -22,9 +22,8 @@ jobs:
     - name: Copy new files
       run: |
         mkdir docs
-        touch docs/.nojekyll
         cp prod/. docs/
-        ls -a docs
+        touch docs/.nojekyll
     - name: Commit files
       run: |
         git config --local user.email "marcoantonioloyom@hotmail.com"
