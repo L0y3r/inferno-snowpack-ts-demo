@@ -23,7 +23,7 @@ jobs:
       run: |
         mkdir docs
         touch docs/.nojekyll
-        cp -r prod/ docs/
+        cp -a prod/. docs/
         ls docs
     - name: Commit files
       run: |
