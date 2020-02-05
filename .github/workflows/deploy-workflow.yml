@@ -23,7 +23,7 @@ jobs:
       run: |
         mkdir docs
         touch docs/.nojekyll
-        cp -r dist/ docs/
+        cp -r prod/ docs/
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
