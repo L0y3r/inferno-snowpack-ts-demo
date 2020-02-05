@@ -27,8 +27,8 @@ jobs:
         ls -a docs
     - name: Commit files
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "marcoantonioloyom@hotmail.com"
+        git config --local user.name "Marco Antonio Loyo"
         git add docs/*
         git commit -m "chore: Deploy website"
     - name: Push changes
