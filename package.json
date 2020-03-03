@@ -30,7 +30,7 @@
   "author": "L0y3r",
   "license": "ISC",
   "dependencies": {
-    "inferno": "7.4.0"
+    "inferno": "7.4.2"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
